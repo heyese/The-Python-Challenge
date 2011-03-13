@@ -8,6 +8,7 @@ import re
 import os
 import shutil
 import commands
+import string
 
 # 1) http://www.pythonchallenge.com/pc/def/0.html
 # Hint is big picture showing 2^38
@@ -17,7 +18,13 @@ def puzzle_1():
   
   
 def puzzle_2():
-  return
+  # There a hint on the screen which suggests the translation table we make below, and a load of gibberish that we guess we should apply it to
+  text = '''g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'''
+  table = string.maketrans('abcdefghijklmnopqrstuvwxyz','cdefghijklmnopqrstuvwxyzab')
+  print "Applying mapping to gibberish:"
+  print text.translate(table)
+  print "Applying mapping to the url gives the following new url code:"
+  return 'map'.translate(table)
 
 def puzzle_3():
   return  
